@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Телефон{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <h1>Телефон</h1>
+        </div>
+        <div class="content">
+            <table>
+                <tr>
+                    <td>
+                        Название модели
+                    </td>
+                    <td>
+                        {{ phone.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Стоимость
+                    </td>
+                    <td>
+                        {{ phone.price }} р.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Дата выхода
+                    </td>
+                    <td>
+                        {{ phone.release_date }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Наличие LTE
+                    </td>
+                    <td>
+                        {{ phone.lte_exists }}
+                    </td>
+                </tr>
+            </table>
+            <img src="{{phone.image}}" alt="{{phone.name}}">
+            <p> <a href="/catalog/"> Назад к каталогу </a> </p>
+        </div>
+    </div>
+{% endblock %}
